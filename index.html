@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lâmpada</title>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            background-color: white;
+        }
+        #lampada {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo</h1>
+
+    <div id="lampada">
+        <img id="lampada-img" src="LAMPADA_DESLIGADA.gif" alt="lampada">
+        <img id="lampada-img" src="LAMPADA_LIGADA.gif" alt="lampada">
+        <button onclick="alternarFundo()">Ligar/Desligar</button>
+    </div>
+
+    <div style="background-color: blanchedalmond; width: 300px; display: flex; flex-direction: column;" >
+        <label for="Senha">Senha</label>
+        <input type="password" name="senha" id="senha">
+        <label for="Confirme a Senha">confirme a Senha</label>
+        <input type="password" name="senha" id="confirmarSenha">
+        <div id="não_batem">As senhas não batem</div>
+        <button onclick="alternarsenha()">verificar/ocultar Senha</button>
+        <button onclick="verificarSenha()">verificar senhas</button>
+ </div>
+<div>
+ <h1>Mini Calculadora</h1>
+ <form id="calculator-form">
+     <label for="num1">Número 1:</label>
+     <input type="number" id="num1" required><br><br>
+     
+     <label for="num2">Número 2:</label>
+     <input type="number" id="num2" required><br><br>
+     
+     <label for="operation">Operação:</label>
+     <select id="operation" required>
+         <option value="">Selecione uma operação</option>
+         <option value="add">Somar (+)</option>
+         <option value="subtract">Subtrair (-)</option>
+         <option value="multiply">Multiplicar (*)</option>
+         <option value="divide">Dividir (/)</option>
+     </select><br><br>
+     
+     <button type="submit">Calcular</button>
+ </form>
+
+ <div id="resultado"></div>
+
+</div>
+
+</body>
+</html>
