@@ -15,7 +15,6 @@ function alternarLampada() {
         lampadaAcesa = true;
     }
 }
-
 function alternarFundo() {
     const body = document.body;
     if (body.style.backgroundColor === 'white') {
@@ -36,7 +35,6 @@ function alternarFundo() {
         input.type = 'password';
         botao.textContent = 'verificar senha';
     }
-
  }
  function verificarSenhas() {
     var input = document.getElementById('senha').value;
@@ -92,5 +90,102 @@ form.addEventListener('submit', function(event) {
         resultDiv.textContent = `Erro: ${error.message}`;
     }
 });
+resultado do exercicio 
+q1
 
+let nome = prompt("Digite seu nome")
+ const titulo = document.querySelector("#titulo")
+
+ titulo.innerHTML = `Bem vindo, ${nome}`
+
+q2
+
+const imagem = document.getElementById("lamp")
+const btn_interruptor = document.querySelector('#btn_lamp')
+const body = document.body
+
+let auxiliar = true
+
+btn_interruptor.addEventListener('click', () => {
+    if (auxiliar) {
+        imagem.src = 'pic_bulboff.gif';
+        btn_interruptor.innerHTML = 'Ligar'
+        body.style.backgroundColor = "black"
+        body.style.color = "white"
+        auxiliar = false
+    } else {
+        imagem.src = 'pic_bulbon.gif';
+        btn_interruptor.innerHTML = 'Desligar'
+        body.style.backgroundColor = "white"
+        body.style.color = "black"
+        auxiliar = true
+    }
+})
+
+
+// q3
+
+const ipt_senha = document.querySelector('#senha')
+const btn_ver = document.querySelector('#btn_ver')
+let visivel = false
+
+btn_ver.addEventListener('click', () => {
+    if (visivel) {
+        ipt_senha.type = 'password'
+        visivel = false
+    } else {
+        ipt_senha.type = 'text'
+        visivel = true
+    }
+})
+
+
+
+// q4
+
+const ipt_rep_senha = document.querySelector('#rep_senha')
+const spn_erro = document.querySelector('#erro')
+ipt_rep_senha.style.outline = 'none'
+
+ipt_rep_senha.addEventListener('input', () => {
+    if (ipt_senha.value !== ipt_rep_senha.value) {
+        ipt_rep_senha.style.border = '1px solid red'
+        spn_erro.style.color = 'red'
+        spn_erro.innerHTML = "As senhas são diferentes"
+    } else {
+        ipt_rep_senha.style.border = 'revert'
+        spn_erro.innerHTML = ""
+    }
+})
+
+
+// q5
+
+const num1 = document.querySelector('#num1')
+const num2 = document.querySelector('#num2')
+const result = document.querySelector('#result')
+
+function soma(a, b) {
+    result.innerHTML = `${Number(a.value) + Number(b.value)}`;
+}
+
+function subtracao(a, b) {
+    result.innerHTML = `${Number(a.value) - Number(b.value)}`;
+}
+
+function multiplicacao(a, b) {
+    result.innerHTML = `${Number(a.value) * Number(b.value)}`;
+}
+
+function divisao(a, b) {
+    try {
+        if (Number(b.value) == 0) {
+            throw Error("Divisao por zero nao permitida")
+        } else {
+            result.innerHTML = `${Number(a.value) / Number(b.value)}`;
+        }
+    } catch (error) {
+        result.innerHTML = error
+    }
+}
 
